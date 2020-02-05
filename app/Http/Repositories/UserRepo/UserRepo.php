@@ -39,4 +39,9 @@ class UserRepo implements UserRepoInterface
     {
         // TODO: Implement delete() method.
     }
+
+    public function search($keyword)
+    {
+        // TODO: Implement search() method.
+    }
 }

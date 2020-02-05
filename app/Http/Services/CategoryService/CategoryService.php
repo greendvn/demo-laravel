@@ -6,13 +6,14 @@ namespace App\Http\Services\CategoryService;
 
 use App\Category;
 use App\Http\Repositories\CategoryRepo\CategoryRepo;
+use App\Http\Repositories\CategoryRepo\CategoryRepoInterface;
 use Illuminate\Support\Str;
 
 class CategoryService implements CategoryServiceInterface
 {
     protected $categoryRepo;
 
-    public function __construct(CategoryRepo $categoryRepo)
+    public function __construct(CategoryRepoInterface $categoryRepo)
     {
         $this->categoryRepo = $categoryRepo;
     }
@@ -47,5 +48,10 @@ class CategoryService implements CategoryServiceInterface
     {
         $category = $this->categoryRepo->findById($id);
         $this->categoryRepo->delete($category);
+    }
+
+    public function search($keyword)
+    {
+        return $this->categoryRepo->search($keyword);
     }
 }

@@ -36,6 +36,7 @@ Route::middleware('checkLogin')->prefix('admin')->group(function (){
         Route::get('/create','CategoryController@create')->name('categories.create');
         Route::post('/create','CategoryController@store')->name('categories.store');
         Route::get('/','CategoryController@index')->name('categories.index');
+        Route::get('/search','CategoryController@search')->name('categories.search');
         Route::get('/{id}/delete','CategoryController@destroy')->name('categories.delete');
         Route::get('/{id}/edit','CategoryController@edit')->name('categories.edit');
         Route::post('/{id}/edit','CategoryController@update')->name('categories.update');
@@ -45,6 +46,7 @@ Route::middleware('checkLogin')->prefix('admin')->group(function (){
         Route::get('/create','ProductController@create')->name('products.create');
         Route::post('/create','ProductController@store')->name('products.store');
         Route::get('/','ProductController@index')->name('products.index');
+        Route::get('/search','ProductController@search')->name('products.search');
         Route::get('/{id}/delete','ProductController@destroy')->name('products.delete');
         Route::get('/{id}/edit','ProductController@edit')->name('products.edit');
         Route::post('/{id}/edit','ProductController@update')->name('products.update');

@@ -11,5 +11,6 @@ interface ServiceInterface
     public function create($obj);
     public function update($obj,$id);
     public function delete($id);
+    public function search($keyword);
 
 }

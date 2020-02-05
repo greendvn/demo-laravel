@@ -39,4 +39,11 @@ class CategoryRepo implements CategoryRepoInterface
     {
         $obj->delete();
     }
+
+    public function search($keyword)
+    {
+        return Category::where('name','LIKE','%'.$keyword.'%')->get();
+    }
+
+
 }

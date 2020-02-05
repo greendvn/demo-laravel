@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5741743c-e091-4838-b5bf-89206fdb1542" name="Default Changelist" comment="" />
+    <list default="true" id="5741743c-e091-4838-b5bf-89206fdb1542" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepo/CategoryRepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepo/CategoryRepo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/ProductRepo/ProductRepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/ProductRepo/ProductRepo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/RepoInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/RepoInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/UserRepo/UserRepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/UserRepo/UserRepo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/CategoryService/CategoryService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/CategoryService/CategoryService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/ProductService/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/ProductService/ProductService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/ServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/ServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/UserService/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/UserService/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.slim.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +36,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -105,6 +132,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1XHzv1QO8RGtY7oia06zIvZog7t" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -112,14 +140,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../customer_manager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/app/public/images/products" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/css" />
       <recent name="$PROJECT_DIR$" />
@@ -150,7 +180,14 @@
       <workItem from="1580777970096" duration="13278000" />
       <workItem from="1580803248905" duration="5236000" />
       <workItem from="1580812616320" duration="1093000" />
-      <workItem from="1580825447576" duration="4397000" />
+      <workItem from="1580825447576" duration="15787000" />
+      <workItem from="1580841280410" duration="602000" />
+      <workItem from="1580864703520" duration="897000" />
+      <workItem from="1580868369489" duration="1203000" />
+      <workItem from="1580870862182" duration="427000" />
+      <workItem from="1580889499388" duration="540000" />
+      <workItem from="1580892532277" duration="4532000" />
+      <workItem from="1580897615046" duration="756000" />
     </task>
     <servers />
   </component>
@@ -158,21 +195,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580757771434">
+    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580839338872">
       <screen x="70" y="27" width="1296" height="741" />
     </state>
-    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1296.741@70.27.1296.741" timestamp="1580757771434" />
-    <state x="501" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1580791370200">
+    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1296.741@70.27.1296.741" timestamp="1580839338872" />
+    <state x="501" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1580897065301">
       <screen x="70" y="27" width="1296" height="741" />
     </state>
-    <state x="501" y="155" width="424" height="491" key="FileChooserDialogImpl/70.27.1296.741@70.27.1296.741" timestamp="1580791370200" />
-    <state x="428" y="211" width="665" height="478" key="NewPhpClassDialog" timestamp="1580827130074">
+    <state x="501" y="155" width="424" height="491" key="FileChooserDialogImpl/70.27.1296.741@70.27.1296.741" timestamp="1580897065301" />
+    <state x="428" y="211" width="673" height="485" key="NewPhpClassDialog" timestamp="1580897701663">
       <screen x="70" y="27" width="1296" height="741" />
     </state>
-    <state x="428" y="211" width="665" height="478" key="NewPhpClassDialog/70.27.1296.741@70.27.1296.741" timestamp="1580827130074" />
+    <state x="428" y="211" width="673" height="485" key="NewPhpClassDialog/70.27.1296.741@70.27.1296.741" timestamp="1580897701663" />
     <state x="513" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1580827017827">
       <screen x="70" y="27" width="1296" height="741" />
     </state>
     <state x="513" y="323" width="399" height="156" key="NewPhpFileDialog/70.27.1296.741@70.27.1296.741" timestamp="1580827017827" />
+    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580896809102">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup/70.27.1296.741@70.27.1296.741" timestamp="1580896809102" />
   </component>
 </project>

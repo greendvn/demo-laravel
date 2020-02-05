@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use App\Http\Services\CategoryService\CategoryService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -30,7 +31,7 @@ class CategoryController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $this->categoryService->create($request);
         Session::flash('succes','Add thành công');
@@ -48,7 +49,7 @@ class CategoryController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
         $this->categoryService->update($request,$id);
         Session::flash('succes','Edit thành công');
@@ -61,6 +62,13 @@ class CategoryController extends Controller
         $this->categoryService->delete($id);
         Session::flash('succes','Delete thành công');
         return redirect()->route('categories.index');
+
+    }
+
+    public function search(Request $request){
+        $keyword = $request->search;
+        $categories = $this->categoryService->search($keyword);
+        return view('admin.categories.list',compact('categories'));
 
     }
 }

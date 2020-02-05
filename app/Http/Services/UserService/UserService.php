@@ -47,4 +47,9 @@ class UserService implements UserServiceInterface
     {
         // TODO: Implement delete() method.
     }
+
+    public function search($keyword)
+    {
+        // TODO: Implement search() method.
+    }
 }

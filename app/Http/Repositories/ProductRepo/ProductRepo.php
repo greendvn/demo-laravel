@@ -28,7 +28,7 @@ class ProductRepo implements ProductRepoInterface
 
     public function create($obj)
     {
-        // TODO: Implement create() method.
+        $obj->save();
     }
 
     public function update($obj, $id)
@@ -39,5 +39,10 @@ class ProductRepo implements ProductRepoInterface
     public function delete($id)
     {
         // TODO: Implement delete() method.
+    }
+
+    public function search($keyword)
+    {
+        return Product::where('name','LIKE','%'.$keyword.'%')->orWhere('price','LIKE','%'.$keyword.'%')->get();
     }
 }
