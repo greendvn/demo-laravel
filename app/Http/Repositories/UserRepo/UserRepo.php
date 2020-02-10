@@ -25,23 +25,19 @@ class UserRepo implements UserRepoInterface
         return $this->user->findOrFail($id);
     }
 
-    public function create($obj)
-    {
-        $obj->save();
-    }
 
-    public function update($obj, $id)
+    public function delete($user)
     {
-        // TODO: Implement update() method.
-    }
-
-    public function delete($id)
-    {
-        // TODO: Implement delete() method.
+        $user->delete();
     }
 
     public function search($keyword)
     {
         // TODO: Implement search() method.
+    }
+
+    public function createOrUpdate($obj)
+    {
+        $obj->save();
     }
 }

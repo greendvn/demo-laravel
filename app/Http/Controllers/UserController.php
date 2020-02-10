@@ -20,7 +20,7 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->userService->getAll();
-        return view('admin.users.list',compact('users'));
+        return view('admin.users.list', compact('users'));
 
     }
 
@@ -34,7 +34,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->userService->create($request);
-        Session::flash('succes','Create account thành công');
+        Session::flash('succes', 'Create account thành công');
         return redirect()->route('login');
     }
 
@@ -47,18 +47,24 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        //
+        $user = $this->userService->findById($id);
+        return view('admin.users.update', compact('user'));
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        $this->userService->update($request,$id);
+        Session::flash('succes', 'edit account thành công');
+        return redirect()->route('users.index');
+
     }
 
 
     public function destroy($id)
     {
-        //
+        $this->userService->delete($id);
+        Session::flash('succes', 'delete account thành công');
+        return redirect()->route('users.index');
     }
 }

@@ -8,6 +8,8 @@ use App\Http\Repositories\ProductRepo\ProductRepo;
 use App\Http\Repositories\ProductRepo\ProductRepoInterface;
 use App\Http\Repositories\UserRepo\UserRepo;
 use App\Http\Repositories\UserRepo\UserRepoInterface;
+use App\Http\Services\CartService\CartService;
+use App\Http\Services\CartService\CartServiceInterface;
 use App\Http\Services\CategoryService\CategoryService;
 use App\Http\Services\CategoryService\CategoryServiceInterface;
 use App\Http\Services\ProductService\ProductService;
@@ -31,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(CategoryServiceInterface::class,CategoryService::class);
         $this->app->singleton(ProductRepoInterface::class,ProductRepo::class);
         $this->app->singleton(ProductServiceInterface::class,ProductService::class);
+        $this->app->singleton(CartServiceInterface::class,CartService::class);
     }
 
     /**

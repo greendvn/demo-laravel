@@ -43,7 +43,7 @@
                 <td>
                     <a href="{{route('categories.edit',$category->id)}}" class="btn btn-danger">Edit</a>
                     <a href="{{route('categories.delete',$category->id)}}" class="btn btn-danger"
-                       onclick="return confirm('Bạn chắc chắn không')">Delete</a>
+                       onclick="return confirm('Thao tác này sẽ xóa {{$category->products->count()}} product, bạn có chắc chắn không')">Delete</a>
 
                 </td>
             </tr>

@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('home',function (){
+Route::get('admin',function (){
     return view('admin.dashboard');
-})->name('home')->middleware('checkLogin');
+})->name('admin')->middleware('checkLogin');
 
 Route::get('login','LoginController@showFromLogin');
 Route::get('logout','LoginController@logout')->name('logout');
@@ -29,6 +29,9 @@ Route::post('/admin/create','UserController@store')->name('users.store');
 Route::middleware('checkLogin')->prefix('admin')->group(function (){
     Route::prefix('/users')->group(function (){
         Route::get('/','UserController@index')->name('users.index');
+        Route::get('/edit/{id}','UserController@edit')->name('users.edit');
+        Route::post('/edit/{id}','UserController@update')->name('users.update');
+        Route::get('/delete/{id}','UserController@destroy')->name('users.delete');
 
 
     });
@@ -53,3 +56,17 @@ Route::middleware('checkLogin')->prefix('admin')->group(function (){
 
     });
 });
+
+Route::prefix('shop')->group(function () {
+    Route::get('/', 'ShopController@index')->name('shop.index');
+    Route::get('/category', 'ShopController@category')->name('shop.category');
+    Route::get('/category/{categoryId}', 'ShopController@filterCategory')->name('shop.filterCategory');
+    Route::get('/cart', 'ShopController@cart')->name('shop.cart');
+    Route::get('/cart/{id}', 'ShopController@addToCart')->name('shop.addToCart');
+    Route::get('/delete-cart/{id}', 'ShopController@removeProductIntoCart')->name('shop.deleteProductIntoCart');
+    Route::post('/update-cart/{id}', 'ShopController@updateProductIntoCart')->name('shop.updateProductIntoCart');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

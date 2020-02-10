@@ -23,26 +23,37 @@ class ProductRepo implements ProductRepoInterface
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+        return $this->product->findOrFail($id);
     }
 
-    public function create($obj)
-    {
-        $obj->save();
-    }
 
-    public function update($obj, $id)
+    public function delete($data)
     {
-        // TODO: Implement update() method.
-    }
-
-    public function delete($id)
-    {
-        // TODO: Implement delete() method.
+        $data->delete();
     }
 
     public function search($keyword)
     {
         return Product::where('name','LIKE','%'.$keyword.'%')->orWhere('price','LIKE','%'.$keyword.'%')->get();
+    }
+
+    public function createOrUpdate($obj)
+    {
+        $obj->save();
+    }
+
+    public function latestProduct()
+    {
+        return $this->product->take(8)->get()->sortByDesc('updated_at');
+    }
+
+    public function paginate()
+    {
+        return $this->product->paginate(6);
+    }
+
+    public function searchCategory($categoryId)
+    {
+        return Product::where('category_id','LIKE',$categoryId)->paginate(6);
     }
 }

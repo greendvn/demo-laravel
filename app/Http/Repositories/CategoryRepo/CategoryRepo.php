@@ -25,19 +25,11 @@ class CategoryRepo implements CategoryRepoInterface
         return $this->category->findOrFail($id);
     }
 
-    public function create($obj)
-    {
-        $obj->save();
-    }
 
-    public function update($obj, $id)
+    public function delete($category)
     {
-        $obj->save();
-    }
-
-    public function delete($obj)
-    {
-        $obj->delete();
+        $category->products()->delete();
+        $category->delete();
     }
 
     public function search($keyword)
@@ -45,5 +37,8 @@ class CategoryRepo implements CategoryRepoInterface
         return Category::where('name','LIKE','%'.$keyword.'%')->get();
     }
 
-
+    public function createOrUpdate($obj)
+    {
+        $obj->save();
+    }
 }

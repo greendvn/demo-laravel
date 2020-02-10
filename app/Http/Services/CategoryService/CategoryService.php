@@ -33,7 +33,7 @@ class CategoryService implements CategoryServiceInterface
         $category = new Category();
         $category->name = $request->name;
         $category->slug = Str::slug($category->name);
-        $this->categoryRepo->create($category);
+        $this->categoryRepo->createOrUpdate($category);
     }
 
     public function update($request, $id)
@@ -41,7 +41,7 @@ class CategoryService implements CategoryServiceInterface
         $category = $this->categoryRepo->findById($id);
         $category->name = $request->name;
         $category->slug = Str::slug($category->name);
-        $this->categoryRepo->update($category,$id);
+        $this->categoryRepo->createOrUpdate($category,$id);
     }
 
     public function delete($id)

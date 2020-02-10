@@ -25,7 +25,7 @@ class ProductService implements ProductServiceInterface
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+        return $this->productRepo->findById($id);
     }
 
     public function create($request)
@@ -46,22 +46,52 @@ class ProductService implements ProductServiceInterface
             $product->image = $imageName;
         }
 
-        $this->productRepo->create($product);
+        $this->productRepo->createOrUpdate($product);
 
     }
 
-    public function update($obj, $id)
+    public function update($request, $id)
     {
-        // TODO: Implement update() method.
+        $product = $this->productRepo->findById($id);
+        $product->name = $request->name;
+        $product->desc = $request->desc;
+        $product->price = $request->price;
+        $product->content = $request->content;
+        $product->category_id = $request->category;
+
+        if($request->hasFile('image')){
+            $image = $request->image;
+            $imageName = date('Y-m-d H:i:s').$image->getClientOriginalName();
+            $request->image->storeAs('public/images/products',$imageName);
+            $product->image = $imageName;
+        }
+
+        $this->productRepo->createOrUpdate($product);
+
     }
 
     public function delete($id)
     {
-        // TODO: Implement delete() method.
+        $product = $this->productRepo->findById($id);
+        $this->productRepo->delete($product);
     }
 
     public function search($keyword)
     {
         return $this->productRepo->search($keyword);
+    }
+    public function searchCategory($categoryId)
+    {
+        return $this->productRepo->searchCategory($categoryId);
+    }
+
+    public function latestProduct()
+    {
+        return $this->productRepo->latestProduct();
+    }
+
+    public function paginate()
+    {
+        return $this->productRepo->paginate();
     }
 }

@@ -60,18 +60,25 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        //
+        $product = $this->productService->findById($id);
+        $categories = $this->categoryService->getAll();
+        return view('admin.products.update',compact('product','categories'));
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        $this->productService->update($request,$id);
+        Session::flash('succes','edit thành công');
+        return redirect()->route('products.index');
     }
 
 
     public function destroy($id)
     {
-        //
+        $this->productService->delete($id);
+        Session::flash('succes','delete thành công');
+        return redirect()->route('products.index');
+
     }
 }

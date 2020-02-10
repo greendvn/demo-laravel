@@ -20,7 +20,7 @@ class LoginController extends Controller
             'password'=>$pass
         ];
         if(Auth::attempt($data)){
-            return redirect('/home');
+            return redirect('/admin');
         };
 
         return back();

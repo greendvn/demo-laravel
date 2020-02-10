@@ -34,18 +34,26 @@ class UserService implements UserServiceInterface
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->pass);
-        $this->userRepo->create($user);
+        $this->userRepo->createOrUpdate($user);
 
     }
 
-    public function update($obj, $id)
+    public function update($request, $id)
     {
-        // TODO: Implement update() method.
+        $user = $this->userRepo->findById($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if($request->pass) {
+            $user->password = Hash::make($request->pass);
+        }
+        $this->userRepo->createOrUpdate($user);
     }
 
     public function delete($id)
     {
-        // TODO: Implement delete() method.
+        $user = $this->userRepo->findById($id);
+        $this->userRepo->delete($user);
+
     }
 
     public function search($keyword)
