@@ -11,7 +11,10 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,7 +23,7 @@ Route::get('admin',function (){
     return view('admin.dashboard');
 })->name('admin')->middleware('checkLogin');
 
-Route::get('login','LoginController@showFromLogin');
+Route::get('login','LoginController@showFromLogin')->name('showFormLogin');
 Route::get('logout','LoginController@logout')->name('logout');
 Route::post('login','LoginController@login')->name('login');
 Route::get('/admin/create','UserController@create')->name('users.create');
@@ -32,7 +35,6 @@ Route::middleware('checkLogin')->prefix('admin')->group(function (){
         Route::get('/edit/{id}','UserController@edit')->name('users.edit');
         Route::post('/edit/{id}','UserController@update')->name('users.update');
         Route::get('/delete/{id}','UserController@destroy')->name('users.delete');
-
 
     });
     Route::prefix('categories')->group(function (){
@@ -53,6 +55,9 @@ Route::middleware('checkLogin')->prefix('admin')->group(function (){
         Route::get('/{id}/delete','ProductController@destroy')->name('products.delete');
         Route::get('/{id}/edit','ProductController@edit')->name('products.edit');
         Route::post('/{id}/edit','ProductController@update')->name('products.update');
+        Route::get('/export/', 'ProductController@export')->name('products.export');
+        Route::post('/import/', 'ProductController@import')->name('products.import');
+
 
     });
 });
@@ -67,6 +72,7 @@ Route::prefix('shop')->group(function () {
     Route::post('/update-cart/{id}', 'ShopController@updateProductIntoCart')->name('shop.updateProductIntoCart');
 });
 
-Auth::routes();
+Route::get('/redirect', 'SocialAuthGoogleController@redirect')->name('redirect');
+Route::get('/callback', 'SocialAuthGoogleController@callback');
 
 Route::get('/home', 'HomeController@index')->name('home');

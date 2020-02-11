@@ -6,19 +6,17 @@
     @include('layout.bannerCategory')
     <!-- End Banner Area -->
     <div class="container">
-        @if(\Illuminate\Support\Facades\Session::has('succes'))
-            {{ \Illuminate\Support\Facades\Session::get('succes')}}
-        @endif
         <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-5">
                 <div class="sidebar-categories">
                     <div class="head">Categories</div>
                     <ul class="main-categories">
-                        @foreach($categories as $category)
+                    @foreach($categories as $category)
                             <li class="main-nav-list"><a href={{route('shop.filterCategory',$category->id)}}><span class="lnr lnr-arrow-right"></span>{{$category->name}}</a></li>
                         @endforeach
                     </ul>
                 </div>
+
 
             </div>
             <div class="col-xl-9 col-lg-8 col-md-7">
@@ -45,6 +43,9 @@
                 <!-- End Filter Bar -->
                 <!-- Start Best Seller -->
                 <section class="lattest-product-area pb-40 category-list">
+                    @if(\Illuminate\Support\Facades\Session::has('success'))
+                        {{ \Illuminate\Support\Facades\Session::get('success')}}
+                    @endif
                     <div class="row">
                         <!-- single product -->
                         @foreach($products as $product)
@@ -54,7 +55,7 @@
                                 <div class="product-details">
                                     <h6>{{$product->name}}</h6>
                                     <div class="price">
-                                        <h6>${{$product->price}}</h6>
+                                        <h6>{{number_format($product->price,0,',','.')}} VND</h6>
                                         <h6 class="l-through">$210.00</h6>
                                     </div>
                                     <div class="prd-bottom">

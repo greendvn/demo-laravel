@@ -17,9 +17,6 @@
         <!-- single product slide -->
         <div class="single-product-slider">
             <div class="container">
-                @if(\Illuminate\Support\Facades\Session::has('succes'))
-                    {{ \Illuminate\Support\Facades\Session::get('succes')}}
-                @endif
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
                         <div class="section-title">
@@ -30,6 +27,9 @@
                         </div>
                     </div>
                 </div>
+                @if(\Illuminate\Support\Facades\Session::has('success'))
+                    {{ \Illuminate\Support\Facades\Session::get('success')}}
+                @endif
                 <div class="row">
                     @foreach($products as $product)
                     <!-- single product -->
@@ -39,7 +39,7 @@
                             <div class="product-details">
                                 <h6>{{$product->name}}</h6>
                                 <div class="price">
-                                    <h6>${{$product->price}}</h6>
+                                    <h6>{{number_format($product->price,0,',','.')}} VND</h6>
                                     <h6 class="l-through">$210.00</h6>
                                 </div>
                                 <div class="prd-bottom">

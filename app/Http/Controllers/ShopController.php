@@ -46,7 +46,7 @@ class ShopController extends Controller
     public function addToCart(Request $request, $productId)
     {
         $this->cartService->addToCart($request,$productId);
-        Session::flash('success', 'Thêm sản phẩm khỏi giỏ hàng thành công');
+        Session::flash('success', 'Thêm sản phẩm vào giỏ hàng thành công');
         return redirect()->back();
     }
 
@@ -59,6 +59,7 @@ class ShopController extends Controller
     public function updateProductIntoCart(Request $request, $productId)
     {
         $this->cartService->update($request,$productId);
+        Session::flash('success', 'Cập nhật sản phẩm vào giỏ hàng thành công');
         return redirect()->back();
     }
     public function filterCategory($categoryId){

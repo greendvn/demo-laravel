@@ -47,7 +47,6 @@ class CartService implements CartServiceInterface
                 $cart = new Cart($oldCart);
                 $cart->update($request, $productId);
                 Session::put('cart', $cart);
-                Session::flash('success', 'Cập nhật thành công!');
             } else {
                 Session::flash('delete_error', 'Bạn chưa mua sản phẩm nào');
             }

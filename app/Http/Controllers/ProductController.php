@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ProductsExport;
 use App\Http\Requests\ProductRequest;
 use App\Http\Services\CategoryService\CategoryService;
 use App\Http\Services\ProductService\ProductService;
 use App\Http\Services\ProductService\ProductServiceInterface;
+use App\Imports\ProductsImport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -80,5 +83,14 @@ class ProductController extends Controller
         Session::flash('succes','delete thành công');
         return redirect()->route('products.index');
 
+    }
+    public function export()
+    {
+        return Excel::download(new ProductsExport, 'products.xlsx');
+    }
+    public function import(Request $request)
+    {
+        $import = Excel::import(new ProductsImport, $request->productsFile);
+        return redirect()->back();
     }
 }

@@ -10,11 +10,14 @@
     <!--================Cart Area =================-->
     <section class="cart_area">
         <div class="container">
-            @if(\Illuminate\Support\Facades\Session::has('succes'))
-                {{ \Illuminate\Support\Facades\Session::get('succes')}}
-            @endif
             <div class="cart_inner">
                 <div class="table-responsive">
+                    @if(\Illuminate\Support\Facades\Session::has('success'))
+                        {{ \Illuminate\Support\Facades\Session::get('success')}}
+                    @endif
+                        @if(\Illuminate\Support\Facades\Session::has('delete_error'))
+                            {{ \Illuminate\Support\Facades\Session::get('delete_error')}}
+                        @endif
                     <table class="table">
                         <thead>
                         <tr>
@@ -41,7 +44,7 @@
                             </td>
 
                             <td>
-                                <h5>${{$product['item']->price}}</h5>
+                                <h5>{{number_format($product['item']->price,0,',','.')}} VND</h5>
                             </td>
                             <form action="{{ route('shop.updateProductIntoCart', $product['item']->id) }}" method="post">
                                 @csrf
@@ -52,7 +55,7 @@
                                 </div>
                             </td>
                             <td>
-                                <h5>{{ $product['price']  }}</h5>
+                                <h5>{{ number_format($product['price'],0,',','.')  }} VND</h5>
                             </td>
                             <td>
                                 <td class="actions" data-th="">
@@ -95,7 +98,7 @@
                                 <h5>Subtotal</h5>
                             </td>
                             <td>
-                                <h5>${{ $cart->totalPrice }}</h5>
+                                <h5>{{number_format( $cart->totalPrice,0,',','.') }} VND</h5>
                             </td>
                         </tr>
                         <tr class="shipping_area">
